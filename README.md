@@ -17,7 +17,7 @@
 ## Установка
 
 ```bash
-go get github.com/yourusername/perturabo
+go get github.com/knyazev-ro/perturabo
 ```
 
 ## Структура проекта
@@ -26,7 +26,7 @@ go get github.com/yourusername/perturabo
 perturabo/
   commands/      # CLI-команды
   migrate/       # Логика применения миграций
-  migrations/    # Ваши миграции (Go-файлы)
+  migrations/    # миграции (Go-файлы)
   registry/      # Регистрация миграций
   create/        # Описание CREATE миграций
   alter/         # Описание ALTER миграций
@@ -52,7 +52,7 @@ perturabo alter:migration user_table users
 ### Применение миграций
 
 ```bash
-perturabo migrate
+perturabo migrate:run
 ```
 
 ### Откат миграций
@@ -64,34 +64,32 @@ perturabo migrate:rollback
 ## Пример миграции
 
 ```go
-var UpCreateUserTable_0001 = registry.Register(
-	registry.Action.Up,
-	"0001_create_user_table",
-	func() any {
-		return &create.Table{
-			Name: "users",
-			Body: []*create.Column{
-				create.NewId(),
-				create.NewString("name", 255).SetNullable(),
-				create.NewBigInteger("value"),
-				create.NewDate("start_date"),
-				create.NewTimestamp("created_at").SetDefault("now()").SetUnique(),
-				create.NewBoolean("is_active").SetNullable(),
-			},
-		}
-	},
-)
+var createGerardMigrationsTable_0000 = facades.NewMigration("0000_create_gerard_migrations_table", func(m *facades.Migration) {
+	m.Up(
+		func() any {
+			return &create.Table{
+				Name: "gerard_migrations",
+				Body: []*create.Column{
+					create.NewId(),
+					create.NewString("name", 255),
+					create.NewBigInteger("wave_id"),
 
-var DownCreateUserTable_0001 = registry.Register(
-	registry.Action.Down,
-	"0001_create_user_table",
-	func() any {
-		return &create.Table{
-			Name: "users",
-			Drop: true,
-		}
-	},
-)
+					create.NewTimestamp("updated_at").Default(types.Now()),
+					create.NewTimestamp("created_at").Default(types.Now()),
+				},
+			}
+		},
+	)
+
+	m.Down(
+		func() any {
+			return &create.Table{
+				Name: "gerard_migrations",
+				Drop: true,
+			}
+		},
+	)
+})
 ```
 
 ## Валидация миграций
