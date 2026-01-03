@@ -2,35 +2,32 @@ package migrations
 
 import (
 	"perturabo/create"
-	"perturabo/registry"
+	"perturabo/facades"
 	"perturabo/types"
 )
 
-var {{.MigrationNameVar}} = "{{.MigrationName}}" // Name of migration MUST be the same as the filename without .go extenstion
+var {{.MigrationNameVar}} = facades.NewMigration("{{.MigrationName}}", func(m *facades.Migration) { 
+	// Name of migration MUST be the same as the filename without .go extenstion
+	m.Up(
+		func() any {
+			return &create.Table{
+				Name: "{{.TableName}}",
+				Body: []*create.Column{
+					create.NewId(),
 
-var Up{{.MigrationNameCamelCase}} = registry.Register(
-	registry.Action.Up,
-	{{.MigrationNameVar}},
-	func() any {
-		return &create.Table{
-			Name: "{{.TableName}}",
-			Body: []*create.Column{
-            	create.NewId(),
-                // Fields place here
-				create.NewTimestamp("updated_at").Default(types.Now()),
-				create.NewTimestamp("created_at").Default(types.Now()),
-			},
-		}
-	},
-)
+					create.NewTimestamp("updated_at").Default(types.Now()),
+					create.NewTimestamp("created_at").Default(types.Now()),
+				},
+			}
+		},
+	)
 
-var Down{{.MigrationNameCamelCase}} = registry.Register(
-	registry.Action.Down,
-	{{.MigrationNameVar}},
-	func() any {
-		return &create.Table{
-			Name: "{{.TableName}}",
-			Drop: true,
-		}
-	},
-)
+	m.Down(
+		func() any {
+			return &create.Table{
+				Name: "{{.TableName}}",
+				Drop: true,
+			}
+		},
+	)
+})

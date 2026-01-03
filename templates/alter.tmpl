@@ -2,33 +2,30 @@ package migrations
 
 import (
 	"perturabo/alter"
-	"perturabo/registry"
+	"perturabo/facades"
 )
 
-var {{.MigrationNameVar}} = "{{.MigrationName}}" // Name of migration MUST be the same as the filename without .go extenstion
+var {{.MigrationNameVar}} = facades.NewMigration("{{.MigrationName}}", func(m *facades.Migration) {
+ 	// Name of migration MUST be the same as the filename without .go extenstion
+	m.Up(
+		func() any {
+			return &alter.Table{
+				Name: "{{.TableName}}",
+				Body: []*alter.Column{
+					//alter.Col() ... Fileds place here
+				},
+			}
+		},
+	)
 
-var Up{{.MigrationNameCamelCase}} = registry.Register(
-	registry.Action.Up,
-	{{.MigrationNameVar}},
-	func() any {
-		return &alter.Table{
-			Name: "{{.TableName}}",
-			Body: []*alter.Column{
-                //alter.Col() ... Fileds place here
-			},
-		}
-	},
-)
-
-var Down{{.MigrationNameCamelCase}} = registry.Register(
-	registry.Action.Down,
-	{{.MigrationNameVar}},
-	func() any {
-		return &alter.Table{
-			Name: "{{.TableName}}",
-			Body: []*alter.Column{
-                //alter.Col() ... Fileds place here
-			},
-		}
-	},
-)
+	m.Down(
+		func() any {
+			return &alter.Table{
+				Name: "{{.TableName}}",
+				Body: []*alter.Column{
+					//alter.Col() ... Fileds place here
+				},
+			}
+		},
+	)
+})
