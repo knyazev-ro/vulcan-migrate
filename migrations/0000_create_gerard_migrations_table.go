@@ -2,37 +2,33 @@ package migrations
 
 import (
 	"perturabo/create"
-	"perturabo/registry"
+	"perturabo/facades"
 	"perturabo/types"
 )
 
-var createGerardMigrationsTable_0000 = "0000_create_gerard_migrations_table" // Name of migration MUST be the same as the filename without .go extenstion
+var createGerardMigrationsTable_0000 = facades.NewMigration("0000_create_gerard_migrations_table", func(m *facades.Migration) {
+	m.Up(
+		func() any {
+			return &create.Table{
+				Name: "gerard_migrations",
+				Body: []*create.Column{
+					create.NewId(),
+					create.NewString("name", 255),
+					create.NewBigInteger("wave_id"),
 
-var UpCreateGerardMigrationsTable_0000 = registry.Register(
-	registry.Action.Up,
-	createGerardMigrationsTable_0000,
-	func() any {
-		return &create.Table{
-			Name: "gerard_migrations",
-			Body: []*create.Column{
-				create.NewId(),
-				create.NewString("name", 255),
-				create.NewBigInteger("wave_id"),
+					create.NewTimestamp("updated_at").Default(types.Now()),
+					create.NewTimestamp("created_at").Default(types.Now()),
+				},
+			}
+		},
+	)
 
-				create.NewTimestamp("updated_at").Default(types.Now()),
-				create.NewTimestamp("created_at").Default(types.Now()),
-			},
-		}
-	},
-)
-
-var DownCreateGerardMigrationsTable_0000 = registry.Register(
-	registry.Action.Down,
-	createGerardMigrationsTable_0000,
-	func() any {
-		return &create.Table{
-			Name: "gerard_migrations",
-			Drop: true,
-		}
-	},
-)
+	m.Down(
+		func() any {
+			return &create.Table{
+				Name: "gerard_migrations",
+				Drop: true,
+			}
+		},
+	)
+})
