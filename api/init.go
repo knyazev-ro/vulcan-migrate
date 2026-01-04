@@ -3,7 +3,8 @@ package api
 import (
 	"fmt"
 	"os"
-	"perturabo/utils"
+
+	"github.com/knyazev-ro/perturabo/utils"
 )
 
 func Init() {

@@ -2,7 +2,8 @@ package cmd
 
 import (
 	"flag"
-	"perturabo/api"
+
+	"github.com/knyazev-ro/perturabo/api"
 )
 
 func Handle(args []string) {

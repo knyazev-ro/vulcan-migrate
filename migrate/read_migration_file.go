@@ -3,13 +3,14 @@ package migrate
 import (
 	"fmt"
 	"os"
-	"perturabo/alter"
-	"perturabo/create"
-	_ "perturabo/migrations"
-	"perturabo/registry"
-	"perturabo/utils"
 	"sort"
 	"strings"
+
+	"github.com/knyazev-ro/perturabo/alter"
+	"github.com/knyazev-ro/perturabo/create"
+	_ "github.com/knyazev-ro/perturabo/migrations"
+	"github.com/knyazev-ro/perturabo/registry"
+	"github.com/knyazev-ro/perturabo/utils"
 )
 
 func LoadMigrationFiles() ([]string, error) {

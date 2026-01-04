@@ -1,6 +1,6 @@
 package facades
 
-import "perturabo/registry"
+import "github.com/knyazev-ro/perturabo/registry"
 
 type Migration struct {
 	MigrationName string

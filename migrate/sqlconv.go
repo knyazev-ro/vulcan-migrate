@@ -2,8 +2,9 @@ package migrate
 
 import (
 	"fmt"
-	"perturabo/alter"
-	"perturabo/create"
+
+	"github.com/knyazev-ro/perturabo/alter"
+	"github.com/knyazev-ro/perturabo/create"
 )
 
 func GenerateCreateTableSQL(table *create.Table) string {

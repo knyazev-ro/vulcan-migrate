@@ -3,10 +3,11 @@ package api
 import (
 	"fmt"
 	"os"
-	"perturabo/migrate"
-	"perturabo/utils"
 	"strconv"
 	"strings"
+
+	"github.com/knyazev-ro/perturabo/migrate"
+	"github.com/knyazev-ro/perturabo/utils"
 )
 
 func AlterMigration(args []string) {

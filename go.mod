@@ -1,4 +1,4 @@
-module perturabo
+module github.com/knyazev-ro/perturabo
 
 go 1.24.1
 

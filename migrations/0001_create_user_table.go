@@ -1,12 +1,12 @@
 package migrations
 
 import (
-	"perturabo/create"
-	"perturabo/facades"
-	"perturabo/types"
+	"github.com/knyazev-ro/perturabo/create"
+	"github.com/knyazev-ro/perturabo/facades"
+	"github.com/knyazev-ro/perturabo/types"
 )
 
-var createUserTable_0001 = facades.NewMigration("0001_create_user_table", func(m *facades.Migration) { 
+var createUserTable_0001 = facades.NewMigration("0001_create_user_table", func(m *facades.Migration) {
 	// Name of migration MUST be the same as the filename without .go extenstion
 	m.Up(
 		func() any {

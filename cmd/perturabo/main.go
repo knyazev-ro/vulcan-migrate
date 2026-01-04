@@ -2,7 +2,8 @@ package main
 
 import (
 	"os"
-	"perturabo/cmd"
+
+	"github.com/knyazev-ro/perturabo/cmd"
 )
 
 func main() {

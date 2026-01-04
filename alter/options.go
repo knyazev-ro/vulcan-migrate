@@ -2,9 +2,10 @@ package alter
 
 import (
 	"fmt"
-	"perturabo/create"
-	"perturabo/types"
 	"strings"
+
+	"github.com/knyazev-ro/perturabo/create"
+	"github.com/knyazev-ro/perturabo/types"
 )
 
 func (c *Column) Type(dbtype *types.DatabaseType) *Column {

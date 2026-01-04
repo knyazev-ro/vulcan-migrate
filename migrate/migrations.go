@@ -2,7 +2,8 @@ package migrate
 
 import (
 	"fmt"
-	"perturabo/registry"
+
+	"github.com/knyazev-ro/perturabo/registry"
 )
 
 func Up() {

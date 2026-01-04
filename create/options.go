@@ -1,6 +1,6 @@
 package create
 
-import "perturabo/types"
+import "github.com/knyazev-ro/perturabo/types"
 
 func (column *Column) Nullable() *Column {
 	column.nullable = true
