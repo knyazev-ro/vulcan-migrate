@@ -1,10 +1,13 @@
 package cmd
 
-import "flag"
+import (
+	"flag"
+	"perturabo/api"
+)
 
 func Handle(args []string) {
 
-	Init()
+	api.Init()
 
 	command := args[1]
 	if command == "help" {
@@ -18,13 +21,13 @@ func Handle(args []string) {
 
 	switch command {
 	case "create:migration":
-		CreateMigration(argsArr)
+		api.CreateMigration(argsArr)
 	case "alter:migration":
-		AlterMigration(argsArr)
+		api.AlterMigration(argsArr)
 	case "migrate:run":
-		Migrate(argsArr)
+		api.Migrate(argsArr)
 	case "migrate:rollback":
-		Rollback(argsArr)
+		api.Rollback(argsArr)
 	default:
 		println("Error. Unknown command ", command)
 		return

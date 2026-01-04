@@ -19,9 +19,9 @@ func DefaultSettings() *Settings {
 	return &Settings{
 		Migrations: "./migrations",
 
-		TemplateCreate:                "./templates/create.tmpl",
-		TemplateAlter:                 "./templates/alter.tmpl",
-		TemplateGerardMigrationsTable: "./templates/gerard_migrations_table.tmpl",
+		TemplateCreate:                "create.tmpl",
+		TemplateAlter:                 "alter.tmpl",
+		TemplateGerardMigrationsTable: "gerard_migrations_table.tmpl",
 	}
 }
 

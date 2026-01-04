@@ -1,4 +1,4 @@
-package cmd
+package api
 
 import (
 	"fmt"
@@ -9,11 +9,11 @@ import (
 	"strings"
 )
 
-func CreateMigration(args []string) {
+func AlterMigration(args []string) {
 
 	settings := utils.LoadSettings()
 	migrationsFolder := settings.Migrations
-	templateFile := settings.TemplateCreate
+	templateFile := settings.TemplateAlter
 
 	existingFIles, err := migrate.LoadMigrationFiles()
 	if err != nil {
@@ -21,22 +21,16 @@ func CreateMigration(args []string) {
 		return
 	}
 
-	var orderNumberOfLastOne int64
-	var newOrderNumber int64
-	if len(existingFIles) <= 0 {
-		newOrderNumber = 0
-	} else {
-		lastOne := strings.Split(existingFIles[len(existingFIles)-1], "_")[0]
-		orderNumberOfLastOne, err = strconv.ParseInt(lastOne, 10, 64)
-		if err != nil {
-			utils.ErrorPrintln(err.Error())
-		}
-		newOrderNumber = orderNumberOfLastOne + 1
+	lastOne := strings.Split(existingFIles[len(existingFIles)-1], "_")[0]
+	orderNumberOfLastOne, err := strconv.ParseInt(lastOne, 10, 64)
+	if err != nil {
+		utils.ErrorPrintln(err.Error())
 	}
 
+	newOrderNumber := orderNumberOfLastOne + 1
 	formatNumber := fmt.Sprintf("%04d", newOrderNumber)
 
-	name := formatNumber + "_create_" + args[0]
+	name := formatNumber + "_alter_" + args[0]
 
 	tableName := strings.ToLower(args[1])
 	MigrationNameCamelCase, MigrationNameVar, MigrationName, err := utils.Normalize(name)

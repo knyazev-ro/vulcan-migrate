@@ -1,5 +1,5 @@
 migrations: "./migrations"
 
-template-create: "./templates/create.tmpl"
-template-alter: "./templates/alter.tmpl"
-template-gerard-migrations: "./templates/gerard_migrations_table.tmpl"
+template-create: "create.tmpl"
+template-alter: "alter.tmpl"
+template-gerard-migrations: "gerard_migrations_table.tmpl"

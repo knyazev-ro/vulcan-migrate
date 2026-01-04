@@ -8,6 +8,8 @@ import (
 	"strings"
 	"text/template"
 
+	"perturabo/templates"
+
 	"github.com/fatih/color"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
@@ -89,11 +91,7 @@ func ParseTemplate(templatePath string, outputFilePath string, data interface{},
 		return outputFilePath, os.ErrExist
 	}
 
-	if _, err := os.Stat(templatePath); os.IsNotExist(err) {
-		ErrorPrintln("Error: template not found:", templatePath)
-		return "", err
-	}
-	tmpl, err := template.ParseFiles(templatePath)
+	tmpl, err := template.ParseFS(templates.TemplatesFS, templatePath)
 	if err != nil {
 		ErrorPrintln("Error parsing template:", err.Error())
 		return "", err
