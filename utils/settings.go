@@ -2,8 +2,8 @@ package utils
 
 import (
 	"log"
-	"os"
 
+	"github.com/knyazev-ro/perturabo/configs"
 	"gopkg.in/yaml.v2"
 )
 
@@ -26,7 +26,7 @@ func DefaultSettings() *Settings {
 }
 
 func LoadSettings() *Settings {
-	data, err := os.ReadFile("settings.yaml")
+	data, err := configs.SettingsFS.ReadFile("settings.yaml")
 	if err != nil {
 		println("Error during reading settings file.")
 		println("Load default settings.")

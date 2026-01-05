@@ -2,19 +2,25 @@ package cmd
 
 import (
 	"flag"
+	"strings"
 
 	"github.com/knyazev-ro/perturabo/api"
 )
 
 func Handle(args []string) {
 
-	api.Init()
-
 	command := args[1]
-	if command == "help" {
+
+	if strings.Split(command, ":")[0] != "pertdb" {
+		return
+	}
+
+	if command == "pertdb:help" {
 		// GetHelp()
 		return
 	}
+
+	api.Init()
 
 	flagSet := flag.NewFlagSet("args", flag.ContinueOnError)
 	flagSet.Parse(args[2:])
