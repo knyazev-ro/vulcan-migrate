@@ -21,13 +21,13 @@ func Handle(args []string) {
 	argsArr := flagSet.Args()
 
 	switch command {
-	case "create:migration":
+	case "pertdb:create-table":
 		api.CreateMigration(argsArr)
-	case "alter:migration":
+	case "pertdb:alter-table":
 		api.AlterMigration(argsArr)
-	case "migrate:run":
+	case "pertdb:run":
 		api.Migrate(argsArr)
-	case "migrate:rollback":
+	case "pertdb:rollback":
 		api.Rollback(argsArr)
 	default:
 		println("Error. Unknown command ", command)
