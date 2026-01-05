@@ -8,7 +8,6 @@ import (
 
 	"github.com/knyazev-ro/perturabo/alter"
 	"github.com/knyazev-ro/perturabo/create"
-	_ "github.com/knyazev-ro/perturabo/migrations"
 	"github.com/knyazev-ro/perturabo/registry"
 	"github.com/knyazev-ro/perturabo/utils"
 )
