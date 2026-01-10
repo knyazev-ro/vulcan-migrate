@@ -16,7 +16,7 @@ func Handle(args []string) {
 	}
 
 	if command == "pertdb:help" {
-		// GetHelp()
+		api.GetHelp()
 		return
 	}
 

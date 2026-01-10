@@ -13,7 +13,7 @@
 * Rollback последних изменений
 * Валидация имён и структуры файлов миграций
 * CI/CD готовность
-* Возможность писать миграции без ORM (использует `Masterminds/squirrel` для SQL-конструкций)
+* Возможность писать миграции без ORM (использует `Gerard Vulcan Query Builder` для SQL-конструкций)
 * CLI для управления миграциями
 
 ---
@@ -76,7 +76,7 @@ import (
 	"os"
 	"strings"
 
-	_ "myproject/migrations" // подключаем миграции
+	_ "myproject/migrations" // подключаем миграции, предварительно создайте в корне проекта папку migrations с файлом migrations.go (он должен быть пустой)
 
 	"github.com/gorilla/mux"
 	"github.com/knyazev-ro/perturabo/cmd"
