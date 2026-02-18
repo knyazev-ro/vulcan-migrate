@@ -1,6 +1,6 @@
 package api
 
-import "github.com/knyazev-ro/perturabo/migrate"
+import "github.com/knyazev-ro/vulcan-migrate/migrate"
 
 func Migrate(args []string) {
 	migrate.Up()

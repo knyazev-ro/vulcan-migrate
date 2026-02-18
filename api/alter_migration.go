@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/knyazev-ro/perturabo/migrate"
-	"github.com/knyazev-ro/perturabo/utils"
+	"github.com/knyazev-ro/vulcan-migrate/migrate"
+	"github.com/knyazev-ro/vulcan-migrate/utils"
 )
 
 func AlterMigration(args []string) {

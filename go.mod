@@ -1,4 +1,4 @@
-module github.com/knyazev-ro/perturabo
+module github.com/knyazev-ro/vulcan-migrate
 
 go 1.24.1
 

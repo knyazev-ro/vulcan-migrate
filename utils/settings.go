@@ -3,7 +3,7 @@ package utils
 import (
 	"log"
 
-	"github.com/knyazev-ro/perturabo/configs"
+	"github.com/knyazev-ro/vulcan-migrate/configs"
 	"gopkg.in/yaml.v2"
 )
 

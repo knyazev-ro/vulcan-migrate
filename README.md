@@ -1,6 +1,6 @@
-# Perturabo
+# Vulcan Migrate
 
-**Perturabo** — минималистичный инструмент для управления миграциями баз данных на Go.
+**Vulcan Migrate** — минималистичный инструмент для управления миграциями баз данных на Go.
 Позволяет создавать, изменять, применять и откатывать миграции в декларативном виде через Go-код.
 
 ---
@@ -21,7 +21,7 @@
 ## Установка
 
 ```bash
-go get github.com/knyazev-ro/perturabo
+go get github.com/knyazev-ro/vulcan-migrate
 ```
 
 ---
@@ -29,7 +29,7 @@ go get github.com/knyazev-ro/perturabo
 ## Структура проекта
 
 ```
-perturabo/
+vulcan-migrate/
   cmd/           # CLI-команды и обработка аргументов
   migrate/       # Логика применения миграций
   migrations/    # Миграции (Go-файлы)
@@ -65,7 +65,7 @@ go run main.go pertdb:rollback
 
 ---
 
-### Минимальный пример проекта с Perturabo
+### Минимальный пример проекта с Vulcan Migrate
 
 ```go
 package main
@@ -79,7 +79,7 @@ import (
 	_ "myproject/migrations" // подключаем миграции, предварительно создайте в корне проекта папку migrations с файлом migrations.go (он должен быть пустой)
 
 	"github.com/gorilla/mux"
-	"github.com/knyazev-ro/perturabo/cmd"
+	"github.com/knyazev-ro/vulcan-migrate/cmd"
 	"myproject/routes"
 )
 
@@ -152,7 +152,7 @@ var createGerardMigrationsTable_0000 = facades.NewMigration(
 
 ## Валидация миграций
 
-Perturabo проверяет:
+Vulcan Migrate проверяет:
 
 * Имя файла — должно содержать `create` или `alter`
 * Расширение файла — `.go`

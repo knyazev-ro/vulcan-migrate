@@ -6,10 +6,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/knyazev-ro/perturabo/alter"
-	"github.com/knyazev-ro/perturabo/create"
-	"github.com/knyazev-ro/perturabo/registry"
-	"github.com/knyazev-ro/perturabo/utils"
+	"github.com/knyazev-ro/vulcan-migrate/alter"
+	"github.com/knyazev-ro/vulcan-migrate/create"
+	"github.com/knyazev-ro/vulcan-migrate/registry"
+	"github.com/knyazev-ro/vulcan-migrate/utils"
 )
 
 func LoadMigrationFiles() ([]string, error) {

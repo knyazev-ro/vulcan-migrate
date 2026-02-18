@@ -3,7 +3,7 @@ package migrate
 import (
 	"fmt"
 
-	"github.com/knyazev-ro/perturabo/registry"
+	"github.com/knyazev-ro/vulcan-migrate/registry"
 )
 
 func Up() {

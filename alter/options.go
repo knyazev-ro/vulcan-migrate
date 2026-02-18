@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/knyazev-ro/perturabo/create"
-	"github.com/knyazev-ro/perturabo/types"
+	"github.com/knyazev-ro/vulcan-migrate/create"
+	"github.com/knyazev-ro/vulcan-migrate/types"
 )
 
 func (c *Column) Type(dbtype *types.DatabaseType) *Column {

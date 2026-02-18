@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/knyazev-ro/perturabo/utils"
+	"github.com/knyazev-ro/vulcan-migrate/utils"
 )
 
 func Init() {

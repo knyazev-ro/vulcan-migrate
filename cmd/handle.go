@@ -4,7 +4,7 @@ import (
 	"flag"
 	"strings"
 
-	"github.com/knyazev-ro/perturabo/api"
+	"github.com/knyazev-ro/vulcan-migrate/api"
 )
 
 func Handle(args []string) {

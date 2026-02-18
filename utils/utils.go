@@ -8,7 +8,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/knyazev-ro/perturabo/templates"
+	"github.com/knyazev-ro/vulcan-migrate/templates"
 
 	"github.com/fatih/color"
 	"golang.org/x/text/cases"

@@ -1,9 +1,9 @@
 package migrations
 
 import (
-	"github.com/knyazev-ro/perturabo/create"
-	"github.com/knyazev-ro/perturabo/facades"
-	"github.com/knyazev-ro/perturabo/types"
+	"github.com/knyazev-ro/vulcan-migrate/create"
+	"github.com/knyazev-ro/vulcan-migrate/facades"
+	"github.com/knyazev-ro/vulcan-migrate/types"
 )
 
 var createGerardMigrationsTable_0000 = facades.NewMigration("0000_create_gerard_migrations_table", func(m *facades.Migration) {

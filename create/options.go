@@ -1,6 +1,6 @@
 package create
 
-import "github.com/knyazev-ro/perturabo/types"
+import "github.com/knyazev-ro/vulcan-migrate/types"
 
 func (column *Column) Nullable() *Column {
 	column.nullable = true

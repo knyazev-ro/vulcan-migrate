@@ -1,9 +1,9 @@
 package migrations
 
 import (
-	"github.com/knyazev-ro/perturabo/create"
-	"github.com/knyazev-ro/perturabo/facades"
-	"github.com/knyazev-ro/perturabo/types"
+	"github.com/knyazev-ro/vulcan-migrate/create"
+	"github.com/knyazev-ro/vulcan-migrate/facades"
+	"github.com/knyazev-ro/vulcan-migrate/types"
 )
 
 var {{.MigrationNameVar}} = facades.NewMigration("{{.MigrationName}}", func(m *facades.Migration) { 

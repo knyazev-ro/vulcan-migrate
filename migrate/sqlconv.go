@@ -3,8 +3,8 @@ package migrate
 import (
 	"fmt"
 
-	"github.com/knyazev-ro/perturabo/alter"
-	"github.com/knyazev-ro/perturabo/create"
+	"github.com/knyazev-ro/vulcan-migrate/alter"
+	"github.com/knyazev-ro/vulcan-migrate/create"
 )
 
 func GenerateCreateTableSQL(table *create.Table) string {

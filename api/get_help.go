@@ -4,7 +4,7 @@ import "fmt"
 
 func GetHelp() {
 	fmt.Println(`
-gerard-framework: perturabo
+vulcan-framework: migrations
 
 Usage:
   go run main.go <command> [options]

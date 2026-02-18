@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/knyazev-ro/perturabo/cmd"
-	_ "github.com/knyazev-ro/perturabo/migrations"
+	"github.com/knyazev-ro/vulcan-migrate/cmd"
+	_ "github.com/knyazev-ro/vulcan-migrate/migrations"
 )
 
 func main() {
