@@ -13,7 +13,7 @@
 * Rollback последних изменений
 * Валидация имён и структуры файлов миграций
 * CI/CD готовность
-* Возможность писать миграции без ORM (использует `Gerard Vulcan Query Builder` для SQL-конструкций)
+* Возможность писать миграции без ORM (использует `Vulcan ORM Query Builder` для SQL-конструкций)
 * CLI для управления миграциями
 
 ---
@@ -104,7 +104,7 @@ func Server(args []string) {
 	port := "8080"
 	hp := strings.Join([]string{host, port}, ":")
 
-	fmt.Println(fmt.Sprintf("Gerard server Up at %s. Ready to accept connections!", hp))
+	fmt.Println(fmt.Sprintf("Vulcan server Up at %s. Ready to accept connections!", hp))
 	http.ListenAndServe(hp, r)
 }
 
